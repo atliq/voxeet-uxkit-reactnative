@@ -78,6 +78,12 @@ declare class RNVoxeetSDK {
      */
     participants(conferenceId: string): Promise<Participant[]>;
     /**
+   * Get the Conference
+   * @param conferenceId Id of the conference to get the Conference
+   * @returns Conference by id
+   */
+    fetch(conferenceId: string): Promise<Conference>;
+    /**
      * Get the list of streams for a given participant
      * @param participantId Id of the participant to get the streams from
      * @returns List of streams for this participant

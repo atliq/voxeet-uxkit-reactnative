@@ -145,9 +145,8 @@ class RNVoxeetSDK {
    * @param conferenceId Id of the conference to get the Conference
    * @returns Conference by id
    */
-     fetch(conferenceId: string): Promise<Conference> {
-      return RNVoxeetConferencekit.fetch(conferenceId)
-      .then((result: Conference) => result);
+    fetch(conferenceId: string): Promise<Conference> {
+      return RNVoxeetConferencekit.fetch(conferenceId);
     }
 
   /**
