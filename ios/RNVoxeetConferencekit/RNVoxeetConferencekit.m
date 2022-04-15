@@ -313,6 +313,21 @@ RCT_EXPORT_METHOD(participants:(NSString *)conferenceID
     });
 }
 
+RCT_EXPORT_METHOD(fetch:(NSString *)conferenceID
+                  resolve:(RCTPromiseResolveBlock)resolve
+                  ejecter:(RCTPromiseRejectBlock)reject)
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [VoxeetSDK.shared.conference fetchWithConferenceID:conferenceID completion:^(VTConference *conference) {
+            if(!conference) {
+                resolve(nil);
+                return;                
+            }
+            resolve([self convertFromConference:conference]);
+        }];
+    });
+}
+
 RCT_EXPORT_METHOD(streams:(NSString *)participantID
                   resolve:(RCTPromiseResolveBlock)resolve
                   ejecter:(RCTPromiseRejectBlock)reject)

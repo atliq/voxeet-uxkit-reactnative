@@ -444,6 +444,16 @@ public class RNVoxeetConferencekitModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
+    public void fetch(String conferenceId, final Promise promise) {
+        VoxeetSDK.conference()
+                .fetchConference(conferenceId)
+                .then(conference -> {
+                    promise.resolve(ConferenceUtil.toMap(conference));
+                })
+                .error(promise::reject);
+    }
+
+    @ReactMethod
     public void participants(String conferenceId, final Promise promise) {
         VoxeetSDK.conference()
                 .fetchConference(conferenceId)

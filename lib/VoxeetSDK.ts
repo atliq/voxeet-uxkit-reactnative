@@ -133,12 +133,22 @@ class RNVoxeetSDK {
    * @param conferenceId Id of the conference to get the participants from
    * @returns List of participants in the conference
    */
-  participants(conferenceId: string): Promise<Participant[]> {
+   participants(conferenceId: string): Promise<Participant[]> {
     return RNVoxeetConferencekit.participants(conferenceId)
     .then((result: any[]) => result.map(r => new Participant(
       r.participantId || "", r.status, r.externalId, r.name, r.avatarUrl
     )));
   }
+
+    /**
+   * Get the Conference
+   * @param conferenceId Id of the conference to get the Conference
+   * @returns Conference by id
+   */
+     fetch(conferenceId: string): Promise<Conference> {
+      return RNVoxeetConferencekit.fetch(conferenceId)
+      .then((result: Conference) => result);
+    }
 
   /**
    * Get the list of streams for a given participant
