@@ -308,7 +308,7 @@ public class RNVoxeetConferencekitModule extends ReactContextBaseJavaModule {
                         paramsHolder.putValue("mode", getString(params, "mode"));
 
                     if (valid(params, "liveRecording"))
-                        paramsHolder.putValue("liveRecording", getString(params, "liveRecording"));
+                        paramsHolder.setLiveRecording(params.getBoolean("liveRecording"));
 
                     if (valid(params, "dolbyVoice"))
                         paramsHolder.setDolbyVoice(params.getBoolean("dolbyVoice"));
