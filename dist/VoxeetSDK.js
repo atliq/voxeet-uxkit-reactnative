@@ -95,6 +95,12 @@ class RNVoxeetSDK {
         return RNVoxeetConferencekit.startVideo();
     }
     /**
+     * Starts the recording video
+     */
+    startRecording() {
+        return RNVoxeetConferencekit.startRecording();
+    }
+    /**
      * Stops the local video
      */
     stopVideo() {

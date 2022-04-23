@@ -62,6 +62,10 @@ declare class RNVoxeetSDK {
      */
     startVideo(): Promise<boolean>;
     /**
+     * Starts the recording video
+     */
+    startRecording(): Promise<boolean>;
+    /**
      * Stops the local video
      */
     stopVideo(): Promise<boolean>;

@@ -328,6 +328,20 @@ RCT_EXPORT_METHOD(fetch:(NSString *)conferenceID
     });
 }
 
+RCT_EXPORT_METHOD(startRecording:(RCTPromiseResolveBlock)resolve
+                  ejecter:(RCTPromiseRejectBlock)reject)
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        VTRecordingService *recording = VoxeetSDK.shared.recording;
+        if(recording) {
+            resolve([self start:recording]);
+            return;
+        }
+        
+        resolve(nil);
+    });
+}
+
 RCT_EXPORT_METHOD(streams:(NSString *)participantID
                   resolve:(RCTPromiseResolveBlock)resolve
                   ejecter:(RCTPromiseRejectBlock)reject)

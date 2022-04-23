@@ -308,7 +308,7 @@ public class RNVoxeetConferencekitModule extends ReactContextBaseJavaModule {
                         paramsHolder.putValue("mode", getString(params, "mode"));
 
                     if (valid(params, "liveRecording"))
-                        paramsHolder.putValue("liveRecording", true);
+                        paramsHolder.putValue("liveRecording", getString(params, "liveRecording"));
 
                     if (valid(params, "dolbyVoice"))
                         paramsHolder.setDolbyVoice(params.getBoolean("dolbyVoice"));
@@ -612,6 +612,14 @@ public class RNVoxeetConferencekitModule extends ReactContextBaseJavaModule {
                     })
                     .error(Throwable::printStackTrace);
         }
+    }
+
+    @ReactMethod
+    public void startRecording(final Promise promise) {
+        RecordingService recordingService = VoxeetSDK.recording();
+        recordingService.start()
+                .then(promise::resolve)
+                .error(promise::reject);
     }
 
 

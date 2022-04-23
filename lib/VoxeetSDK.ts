@@ -113,6 +113,13 @@ class RNVoxeetSDK {
   }
 
   /**
+   * Starts the recording video
+   */
+    startRecording(): Promise<boolean> {
+      return RNVoxeetConferencekit.startRecording();
+    }
+
+  /**
    * Stops the local video
    */
   stopVideo(): Promise<boolean> {
