@@ -47,6 +47,7 @@ import com.voxeet.sdk.push.center.management.NotificationMode;
 import com.voxeet.sdk.push.center.management.VersionFilter;
 import com.voxeet.sdk.push.center.subscription.register.SubscribeInvitation;
 import com.voxeet.sdk.services.ConferenceService;
+import com.voxeet.sdk.services.RecordingService;
 import com.voxeet.sdk.services.TelemetryService;
 import com.voxeet.sdk.services.builders.ConferenceCreateOptions;
 import com.voxeet.sdk.services.builders.ConferenceJoinOptions;
