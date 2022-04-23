@@ -333,7 +333,6 @@ RCT_EXPORT_METHOD(startRecording:(RCTPromiseResolveBlock)resolve
 {
     dispatch_async(dispatch_get_main_queue(), ^{
         if(VoxeetSDK.shared.recording) {
-            [VoxeetSDK.shared.recording startWithFireInterval:<#(NSInteger)#> completion:<#^(NSError * _Nullable)completion#>];
             [VoxeetSDK.shared.recording startWithFireInterval:1200 completion:^(NSError *error) {
                 if (error != nil) {
                     reject(@"sendBroadcastMessage_error", [error localizedDescription], nil);
