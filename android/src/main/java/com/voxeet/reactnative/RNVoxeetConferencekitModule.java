@@ -209,6 +209,25 @@ public class RNVoxeetConferencekitModule extends ReactContextBaseJavaModule {
         promise.resolve(true);
     }
 
+     @ReactMethod
+    public void isSpeaking(final String participantId,
+                                final Promise promise) {
+        Participant participant = VoxeetSDK.conference().findParticipantById(participantId);
+
+        if (null == participant) {
+            promise.resolve(false);
+            return;
+        }
+
+        VoxeetSDK.conference()
+                .isSpeaking(participant)
+                .then(status -> {
+                    promise.resolve(status);
+                })
+                .error(promise::reject);
+    }
+
+
     @ReactMethod
     public void onAccessTokenKo(final String reason,
                                 final Promise promise) {

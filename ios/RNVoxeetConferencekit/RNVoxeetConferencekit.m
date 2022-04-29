@@ -313,6 +313,42 @@ RCT_EXPORT_METHOD(participants:(NSString *)conferenceID
     });
 }
 
+RCT_EXPORT_METHOD(isSpeaking:(NSString *)participantID
+                  resolve:(RCTPromiseResolveBlock)resolve
+                  ejecter:(RCTPromiseRejectBlock)reject)
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        
+        VTConference *conference = VoxeetSDK.shared.conference.current;
+        
+        if (!conference) {
+            resolve([NSNumber numberWithBool:FALSE]);
+            return;
+        }
+
+        NSArray<VTParticipant *> *participants = conference.participants;
+
+        for (VTParticipant *participant in participants) {
+            
+            if ([participant.id isEqualToString: participantID]) {
+                resolve([NSNumber numberWithBool:VoxeetSDK.shared.conference.isSpeaking:participant]);
+                return;
+            }
+        }
+        resolve([NSNumber numberWithBool:FALSE]);
+    });
+
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [VoxeetSDK.shared.conference fetchWithConferenceID:conferenceID completion:^(VTConference *conference) {
+            if(!conference) {
+                resolve(nil);
+                return;                
+            }
+            resolve([self convertFromConference:conference]);
+        }];
+    });
+}
+
 RCT_EXPORT_METHOD(fetch:(NSString *)conferenceID
                   resolve:(RCTPromiseResolveBlock)resolve
                   ejecter:(RCTPromiseRejectBlock)reject)
