@@ -92,7 +92,7 @@ declare class RNVoxeetSDK {
      * @param participantId Id of the participant to get the status
      * @returns status of speaker
      */
-    isSpeaking(participantId: string): Promise<Boolean>;
+    isSpeaking(participantId: string): Promise<any>;
     /**
      * Get the list of streams for a given participant
      * @param participantId Id of the participant to get the streams from

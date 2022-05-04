@@ -331,21 +331,12 @@ RCT_EXPORT_METHOD(isSpeaking:(NSString *)participantID
         for (VTParticipant *participant in participants) {
             
             if ([participant.id isEqualToString: participantID]) {
-                resolve([NSNumber numberWithBool:VoxeetSDK.shared.conference.isSpeaking:participant]);
+                BOOL isParticipantSpeaking = [VoxeetSDK.shared.conference isSpeakingWithParticipant:participant];
+                resolve([NSNumber numberWithBool: isParticipantSpeaking]);
                 return;
             }
         }
         resolve([NSNumber numberWithBool:FALSE]);
-    });
-
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [VoxeetSDK.shared.conference fetchWithConferenceID:conferenceID completion:^(VTConference *conference) {
-            if(!conference) {
-                resolve(nil);
-                return;                
-            }
-            resolve([self convertFromConference:conference]);
-        }];
     });
 }
 

@@ -4,10 +4,14 @@ import android.Manifest;
 import android.app.Activity;
 import android.app.Application;
 import android.os.Build;
+import android.os.Handler;
+import android.os.Looper;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
@@ -218,15 +222,19 @@ public class RNVoxeetConferencekitModule extends ReactContextBaseJavaModule {
             promise.resolve(false);
             return;
         }
-
-        VoxeetSDK.conference()
-                .isSpeaking(participant)
-                .then(status -> {
-                    promise.resolve(status);
-                })
-                .error(promise::reject);
+         new Handler(Looper.getMainLooper()).post(new Runnable() {
+             @Override
+             public void run() {
+                 WritableMap params = Arguments.createMap();
+                 try {
+                     params.putString("isSpeaking", String.valueOf(VoxeetSDK.conference().isSpeaking(participant)));
+                     promise.resolve(params);
+                 } catch (Exception e) {
+                     promise.reject(e);
+                 }
+             }
+         });
     }
-
 
     @ReactMethod
     public void onAccessTokenKo(final String reason,
@@ -328,10 +336,10 @@ public class RNVoxeetConferencekitModule extends ReactContextBaseJavaModule {
                         paramsHolder.putValue("mode", getString(params, "mode"));
 
                     if (valid(params, "liveRecording"))
-                        paramsHolder.putValue("liveRecording", getString(params, "liveRecording"));
+                        paramsHolder.putValue("liveRecording", true);
 
                     if (valid(params, "dolbyVoice"))
-                        paramsHolder.setDolbyVoice(params.getBoolean("dolbyVoice"));
+                        paramsHolder.setDolbyVoice(false);
 
                     if (valid(params, "simulcast"))
                         paramsHolder.setSimulcast(params.getBoolean("simulcast"));

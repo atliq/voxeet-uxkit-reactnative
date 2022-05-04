@@ -161,7 +161,7 @@ class RNVoxeetSDK {
    * @param participantId Id of the participant to get the status
    * @returns status of speaker
    */
-  isSpeaking(participantId: string): Promise<Boolean> {
+  isSpeaking(participantId: string): Promise<any> {
       return RNVoxeetConferencekit.isSpeaking(participantId);
   }
 
