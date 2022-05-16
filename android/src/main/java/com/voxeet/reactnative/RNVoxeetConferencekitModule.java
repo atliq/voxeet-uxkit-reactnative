@@ -650,6 +650,14 @@ public class RNVoxeetConferencekitModule extends ReactContextBaseJavaModule {
                 .error(promise::reject);
     }
 
+    @ReactMethod
+    public void stopRecording(final Promise promise) {
+        RecordingService recordingService = VoxeetSDK.recording();
+        recordingService.stop()
+                .then(promise::resolve)
+                .error(promise::reject);
+    }
+
 
     public ParticipantInfo getCurrentUser() {
         return _current_user;

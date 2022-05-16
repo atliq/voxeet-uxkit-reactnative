@@ -75,6 +75,13 @@ class RNVoxeetSDK {
   }
 
   /**
+   * Closes the current session.
+   */
+  release(): Promise<boolean> {
+    return RNVoxeetConferencekit.release();
+  }
+
+  /**
    * Creates a conference.
    * @param options Options to use to create the conference
    */
@@ -115,9 +122,16 @@ class RNVoxeetSDK {
   /**
    * Starts the recording video
    */
-    startRecording(): Promise<boolean> {
-      return RNVoxeetConferencekit.startRecording();
-    }
+  startRecording(): Promise<boolean> {
+    return RNVoxeetConferencekit.startRecording();
+  }
+
+  /**
+   * Starts the recording video
+   */
+   stopRecording(): Promise<boolean> {
+    return RNVoxeetConferencekit.stopRecording();
+  }
 
   /**
    * Stops the local video

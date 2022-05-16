@@ -39,6 +39,10 @@ declare class RNVoxeetSDK {
      */
     disconnect(): Promise<boolean>;
     /**
+     * Closes the current session.
+     */
+    release(): Promise<boolean>;
+    /**
      * Creates a conference.
      * @param options Options to use to create the conference
      */
@@ -65,6 +69,10 @@ declare class RNVoxeetSDK {
      * Starts the recording video
      */
     startRecording(): Promise<boolean>;
+    /**
+     * Starts the recording video
+     */
+    stopRecording(): Promise<boolean>;
     /**
      * Stops the local video
      */

@@ -62,6 +62,12 @@ class RNVoxeetSDK {
         return RNVoxeetConferencekit.disconnect();
     }
     /**
+     * Closes the current session.
+     */
+    release() {
+        return RNVoxeetConferencekit.release();
+    }
+    /**
      * Creates a conference.
      * @param options Options to use to create the conference
      */
@@ -99,6 +105,12 @@ class RNVoxeetSDK {
      */
     startRecording() {
         return RNVoxeetConferencekit.startRecording();
+    }
+    /**
+     * Starts the recording video
+     */
+    stopRecording() {
+        return RNVoxeetConferencekit.stopRecording();
     }
     /**
      * Stops the local video
