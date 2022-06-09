@@ -157,6 +157,16 @@ public class RNVoxeetConferencekitModule extends ReactContextBaseJavaModule {
         promise.resolve(true);
     }
 
+    @ReactMethod
+    public void startScreenShare(final Promise promise){
+        VoxeetSDK.screenShare().sendUserPermissionRequest(sActivity);
+        VoxeetSDK.screenShare().sendRequestStartScreenShare();
+    }
+
+    @ReactMethod void stopScreenShare(final Promise promise){
+        VoxeetSDK.screenShare().stopScreenShare();
+    }
+
     private void internalInitialize(boolean deactivateOverlay) {
         Application application = (Application) reactContext.getApplicationContext();
         VoxeetSDK.conference().ConferenceConfigurations.TelecomWaitingForParticipantTimeout = 30 * 1000; //30s

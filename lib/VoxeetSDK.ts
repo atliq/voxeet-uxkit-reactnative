@@ -141,6 +141,21 @@ class RNVoxeetSDK {
   }
 
   /**
+   * Start screen sharing
+  */
+  startScreenSharing(): Promise<boolean> {
+    return RNVoxeetConferencekit.startScreenShare();
+  }
+
+  /**
+   * Stop screen sharing
+  */
+  stopScreenSharing(): Promise<boolean> {
+    return RNVoxeetConferencekit.stopScreenShare();
+  }
+
+
+  /**
    * Invite a participant to the conference.
    * @param conferenceId Id of the conference to invite the participant to
    * @param participants List of participants to invite

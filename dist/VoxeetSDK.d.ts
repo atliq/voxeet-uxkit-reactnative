@@ -78,6 +78,14 @@ declare class RNVoxeetSDK {
      */
     stopVideo(): Promise<boolean>;
     /**
+     * Start screen sharing
+    */
+    startScreenSharing(): Promise<boolean>;
+    /**
+     * Stop screen sharing
+    */
+    stopScreenSharing(): Promise<boolean>;
+    /**
      * Invite a participant to the conference.
      * @param conferenceId Id of the conference to invite the participant to
      * @param participants List of participants to invite
