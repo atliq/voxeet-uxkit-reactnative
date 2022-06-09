@@ -374,12 +374,50 @@ RCT_EXPORT_METHOD(startRecording:(RCTPromiseResolveBlock)resolve
     });
 }
 
+RCT_EXPORT_METHOD(startScreenShare:(RCTPromiseResolveBlock)resolve
+                  ejecter:(RCTPromiseRejectBlock)reject)
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if(VoxeetSDK.shared.conference) {
+            [VoxeetSDK.shared.conference startScreenShare:^(NSError *error) {
+                if (error != nil) {
+                    reject(@"sendBroadcastMessage_error", [error localizedDescription], nil);
+                } else {
+                    resolve(nil);
+                }
+            }];
+            return;
+        } else {
+            resolve(nil);
+        }
+    });
+}
+
 RCT_EXPORT_METHOD(stopRecording:(RCTPromiseResolveBlock)resolve
                   ejecter:(RCTPromiseRejectBlock)reject)
 {
     dispatch_async(dispatch_get_main_queue(), ^{
         if(VoxeetSDK.shared.recording) {
             [VoxeetSDK.shared.recording startWithFireInterval:1200 completion:^(NSError *error) {
+                if (error != nil) {
+                    reject(@"sendBroadcastMessage_error", [error localizedDescription], nil);
+                } else {
+                    resolve(nil);
+                }
+            }];
+            return;
+        } else {
+            resolve(nil);
+        }
+    });
+}
+
+RCT_EXPORT_METHOD(stopScreenShare:(RCTPromiseResolveBlock)resolve
+                  ejecter:(RCTPromiseRejectBlock)reject)
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if(VoxeetSDK.shared.conference) {
+            [VoxeetSDK.shared.conference stopScreenShare:^(NSError *error) {
                 if (error != nil) {
                     reject(@"sendBroadcastMessage_error", [error localizedDescription], nil);
                 } else {
