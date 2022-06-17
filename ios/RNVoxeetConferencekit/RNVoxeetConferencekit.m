@@ -40,6 +40,9 @@ RCT_EXPORT_METHOD(initialize:(NSString *)consumerKey
         self->_deactivatedOverlay = deactivateOverlay;
         if (!deactivateOverlay) {
             [VoxeetUXKit.shared initialize];
+            VoxeetUXKit.shared.conferenceController.configuration.actionBar.displayScreenShare = true;
+            VoxeetSDK.shared.appGroup = @"group.com.athletecoach";
+            VoxeetSDK.shared.preferredExtension = @"com.athletecoach.Athlete-CoachSetupUI";
         }
 
         resolve(nil);

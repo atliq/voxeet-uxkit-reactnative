@@ -63,10 +63,12 @@ import com.voxeet.sdk.utils.VoxeetEnvironmentHolder;
 import com.voxeet.uxkit.controllers.ConferenceToolkitController;
 import com.voxeet.uxkit.controllers.VoxeetToolkit;
 import com.voxeet.uxkit.implementation.overlays.OverlayState;
-
+import com.voxeet.sdk.services.screenshare.RequestScreenSharePermissionEvent;
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
+import android.graphics.Point;
+import android.util.DisplayMetrics;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -159,8 +161,7 @@ public class RNVoxeetConferencekitModule extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void startScreenShare(final Promise promise){
-        VoxeetSDK.screenShare().sendUserPermissionRequest(sActivity);
-        VoxeetSDK.screenShare().sendRequestStartScreenShare();
+       VoxeetSDK.screenShare().sendRequestStartScreenShare();
     }
 
     @ReactMethod void stopScreenShare(final Promise promise){
@@ -181,7 +182,15 @@ public class RNVoxeetConferencekitModule extends ReactContextBaseJavaModule {
                 .initialize(application, EventBus.getDefault())
                 .enableOverlay(!deactivateOverlay);
 
-        if (!deactivateOverlay) VoxeetToolkit.instance().enable(ConferenceToolkitController.class);
+        if (!deactivateOverlay) {
+            VoxeetToolkit.instance().getConferenceToolkit().setScreenShareEnabled(true)
+                .setDefaultOverlayState(OverlayState.EXPANDED);
+            
+            VoxeetToolkit.instance().enable(ConferenceToolkitController.class);
+
+            DisplayMetrics dm = reactContext.getResources().getDisplayMetrics();
+            VoxeetSDK.screenShare().setScreenSizeInformation(new Point(dm.heightPixels,dm.widthPixels));
+        }
 
         VoxeetSDK.instance().register(this);
     }
