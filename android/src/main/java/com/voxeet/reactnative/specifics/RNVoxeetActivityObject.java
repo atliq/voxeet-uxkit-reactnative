@@ -84,6 +84,8 @@ public class RNVoxeetActivityObject {
         if (EventBus.getDefault().isRegistered(this)) {
             EventBus.getDefault().unregister(this);
         }
+
+        ScreenCapturerService.unregisterActivity();
     }
 
     public void onDestroy() {
