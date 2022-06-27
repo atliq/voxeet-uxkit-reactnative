@@ -19,6 +19,7 @@ import com.voxeet.sdk.services.screenshare.RequestScreenSharePermissionEvent;
 import com.voxeet.sdk.utils.Validate;
 import com.voxeet.uxkit.activities.notification.IncomingBundleChecker;
 import com.voxeet.uxkit.incoming.factory.IncomingCallFactory;
+import com.voxeet.sdk.services.screenshare.ScreenCapturerService;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -56,6 +57,7 @@ public class RNVoxeetActivityObject {
 
     public void onResume(@NonNull RNVoxeetActivity activity) {
         paused = false;
+        ScreenCapturerService.register(getActivity());
         VoxeetSDK.instance().register(this);
 
         if (!EventBus.getDefault().isRegistered(this)) {
