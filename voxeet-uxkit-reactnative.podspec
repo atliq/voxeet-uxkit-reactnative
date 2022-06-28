@@ -10,7 +10,7 @@ Pod::Spec.new do |spec|
   spec.author = "Voxeet"
   spec.homepage = "https://dolby.io"
   spec.platform = :ios, "12.0"
-  spec.source = { :git => "https://github.com/voxeet/voxeet-uxkit-reactnative.git", :tag => "v#{spec.version}" }
+  spec.source = { :git => "https://github.com/atliq/voxeet-uxkit-reactnative.git", :tag => "v#{spec.version}" }
   spec.source_files  = "ios/**/*.{h,m}"
   spec.framework = "UIKit"
   spec.dependency "React"
