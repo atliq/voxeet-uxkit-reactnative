@@ -35,9 +35,11 @@ class RNVoxeetSDK {
      * Initializes the SDK with an access token that is provided by the customer backend communicating with Voxeet servers.
      * @param accessToken Access token
      * @param refreshToken Callback to get a new access token after it expires
+     * @param appGroup appGroup for iOS Screenshare (optional) put null if you don't want to use it
+     * @param preferredExtension preferredExtension for iOS Screenshare extension bundle id (optional) put null
      * @param deactivateOverlay Optional value to deactivate the whole overlay if the react native will take care of displaying specific UI
      */
-    initializeToken(accessToken, refreshToken, deactivateOverlay) {
+    initializeToken(accessToken, refreshToken, appGroup, preferredExtension, deactivateOverlay) {
         if (!this.refreshAccessTokenCallback) {
             this.refreshAccessTokenCallback = () => {
                 refreshToken()
@@ -51,7 +53,10 @@ class RNVoxeetSDK {
                 this.refreshAccessTokenCallback && this.refreshAccessTokenCallback();
             });
         }
-        return RNVoxeetConferencekit.initializeToken(accessToken, !!deactivateOverlay);
+        if (Platform.OS === 'android') {
+            return RNVoxeetConferencekit.initializeToken(accessToken, !!deactivateOverlay);
+        }
+        return RNVoxeetConferencekit.initializeToken(accessToken, appGroup, preferredExtension, !!deactivateOverlay);
     }
     /**
      * Opens a new session.

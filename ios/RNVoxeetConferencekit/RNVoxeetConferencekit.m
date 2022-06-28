@@ -42,9 +42,11 @@ RCT_EXPORT_METHOD(initialize:(NSString *)consumerKey
         self->_deactivatedOverlay = deactivateOverlay;
         if (!deactivateOverlay) {
             [VoxeetUXKit.shared initialize];
-            VoxeetUXKit.shared.conferenceController.configuration.actionBar.displayScreenShare = true;
-            VoxeetSDK.shared.appGroup = appGroup;
-            VoxeetSDK.shared.preferredExtension = preferredExtension;
+            if (appGroup != nil && preferredExtension != nil) {
+                VoxeetUXKit.shared.conferenceController.configuration.actionBar.displayScreenShare = true;
+                VoxeetSDK.shared.appGroup = appGroup;
+                VoxeetSDK.shared.preferredExtension = preferredExtension;
+            }
         }
 
         resolve(nil);
@@ -52,6 +54,8 @@ RCT_EXPORT_METHOD(initialize:(NSString *)consumerKey
 }
 
 RCT_EXPORT_METHOD(initializeToken:(NSString *)accessToken
+                 appGroup:(NSString *)appGroup
+                  preferredExtension:(NSString *)preferredExtension
                   deactivateOverlay:(BOOL) deactivateOverlay
                   resolve:(RCTPromiseResolveBlock)resolve
                   ejecter:(RCTPromiseRejectBlock)reject)
@@ -70,6 +74,11 @@ RCT_EXPORT_METHOD(initializeToken:(NSString *)accessToken
         self->_deactivatedOverlay = deactivateOverlay;
         if (!deactivateOverlay) {
             [VoxeetUXKit.shared initialize];
+            if (appGroup != nil && preferredExtension != nil) {
+                VoxeetUXKit.shared.conferenceController.configuration.actionBar.displayScreenShare = true;
+                VoxeetSDK.shared.appGroup = appGroup;
+                VoxeetSDK.shared.preferredExtension = preferredExtension;
+            }
         }
         
         resolve(nil);

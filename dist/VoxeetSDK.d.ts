@@ -23,14 +23,16 @@ declare class RNVoxeetSDK {
      * @param preferredExtension preferredExtension for iOS Screenshare extension bundle id (optional)
      * @param deactivateOverlay Optional value to deactivate the whole overlay if the react native will take care of displaying specific UI
      */
-    initialize(consumerKey: string, consumerSecret: string, appGroup: string, preferredExtension: string, deactivateOverlay?: boolean): Promise<boolean>;
+    initialize(consumerKey: string, consumerSecret: string, appGroup?: string, preferredExtension?: string, deactivateOverlay?: boolean): Promise<boolean>;
     /**
      * Initializes the SDK with an access token that is provided by the customer backend communicating with Voxeet servers.
      * @param accessToken Access token
      * @param refreshToken Callback to get a new access token after it expires
+     * @param appGroup appGroup for iOS Screenshare (optional) put null if you don't want to use it
+     * @param preferredExtension preferredExtension for iOS Screenshare extension bundle id (optional) put null
      * @param deactivateOverlay Optional value to deactivate the whole overlay if the react native will take care of displaying specific UI
      */
-    initializeToken(accessToken: string | undefined, refreshToken: TokenRefreshCallback, deactivateOverlay?: boolean): Promise<boolean>;
+    initializeToken(accessToken: string | undefined, refreshToken: TokenRefreshCallback, appGroup?: string, preferredExtension?: string, deactivateOverlay?: boolean): Promise<boolean>;
     /**
      * Opens a new session.
      * @param userInfo Participant information
