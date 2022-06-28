@@ -27,6 +27,8 @@ RCT_EXPORT_MODULE();
 
 RCT_EXPORT_METHOD(initialize:(NSString *)consumerKey
                   consumerSecret:(NSString *)consumerSecret
+                  appGroup:(NSString *)appGroup
+                  preferredExtension:(NSString *)preferredExtension
                   deactivateOverlay:(BOOL) deactivateOverlay
                   resolve:(RCTPromiseResolveBlock)resolve
                   ejecter:(RCTPromiseRejectBlock)reject)
@@ -41,8 +43,8 @@ RCT_EXPORT_METHOD(initialize:(NSString *)consumerKey
         if (!deactivateOverlay) {
             [VoxeetUXKit.shared initialize];
             VoxeetUXKit.shared.conferenceController.configuration.actionBar.displayScreenShare = true;
-            VoxeetSDK.shared.appGroup = @"group.com.athletecoach";
-            VoxeetSDK.shared.preferredExtension = @"com.athletecoach.Athlete-CoachSetupUI";
+            VoxeetSDK.shared.appGroup = appGroup;
+            VoxeetSDK.shared.preferredExtension = preferredExtension;
         }
 
         resolve(nil);

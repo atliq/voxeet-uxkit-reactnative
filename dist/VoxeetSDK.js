@@ -21,10 +21,15 @@ class RNVoxeetSDK {
      * Initializes the SDK using the customer key and secret.
      * @param consumerKey Consumer Key
      * @param consumerSecret Consumer Secret
+     * @param appGroup appGroup for iOS Screenshare (optional)
+     * @param preferredExtension preferredExtension for iOS Screenshare extension bundle id (optional)
      * @param deactivateOverlay Optional value to deactivate the whole overlay if the react native will take care of displaying specific UI
      */
-    initialize(consumerKey, consumerSecret, deactivateOverlay) {
-        return RNVoxeetConferencekit.initialize(consumerKey, consumerSecret, !!deactivateOverlay);
+    initialize(consumerKey, consumerSecret, appGroup, preferredExtension, deactivateOverlay) {
+        if (Platform.OS === 'android') {
+            return RNVoxeetConferencekit.initialize(consumerKey, consumerSecret, !!deactivateOverlay);
+        }
+        return RNVoxeetConferencekit.initialize(consumerKey, consumerSecret, appGroup, preferredExtension, !!deactivateOverlay);
     }
     /**
      * Initializes the SDK with an access token that is provided by the customer backend communicating with Voxeet servers.
