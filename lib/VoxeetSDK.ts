@@ -149,14 +149,20 @@ class RNVoxeetSDK {
    * Start screen sharing
   */
   startScreenSharing(): Promise<boolean> {
-    return RNVoxeetConferencekit.startScreenShare();
+    if(Platform.OS === 'android') {
+      return RNVoxeetConferencekit.startScreenShare();
+    }
+    throw new Error('Screen sharing is not supported on iOS');
   }
 
   /**
    * Stop screen sharing
   */
   stopScreenSharing(): Promise<boolean> {
-    return RNVoxeetConferencekit.stopScreenShare();
+    if(Platform.OS === 'android') {
+      return RNVoxeetConferencekit.stopScreenShare();
+    }
+    throw new Error('Screen sharing is not supported on iOS');
   }
 
 
