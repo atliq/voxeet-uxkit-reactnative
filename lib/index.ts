@@ -1,5 +1,4 @@
 import VoxeetEvents from "./VoxeetEvents";
-import VideoView from "./VideoView";
 import VoxeetSDK from "./VoxeetSDK";
 export * from "./events";
 
@@ -19,5 +18,4 @@ export {
 export {
   VoxeetSDK,
   VoxeetEvents,
-  VideoView
 };
