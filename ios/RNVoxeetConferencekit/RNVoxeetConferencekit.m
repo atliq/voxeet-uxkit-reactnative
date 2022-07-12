@@ -369,7 +369,7 @@ RCT_EXPORT_METHOD(fetch:(NSString *)conferenceID
     });
 }
 
-RCT_EXPORT_METHOD(startRecording:(RCTPromiseResolveBlock)resolve
+RCT_EXPORT_METHOD(stopRecording:(RCTPromiseResolveBlock)resolve
                   ejecter:(RCTPromiseRejectBlock)reject)
 {
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -388,7 +388,7 @@ RCT_EXPORT_METHOD(startRecording:(RCTPromiseResolveBlock)resolve
     });
 }
 
-RCT_EXPORT_METHOD(stopRecording:(RCTPromiseResolveBlock)resolve
+RCT_EXPORT_METHOD(startRecording:(RCTPromiseResolveBlock)resolve
                   ejecter:(RCTPromiseRejectBlock)reject)
 {
     dispatch_async(dispatch_get_main_queue(), ^{
