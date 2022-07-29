@@ -123,6 +123,12 @@ class RNVoxeetSDK {
         return RNVoxeetConferencekit.stopRecording();
     }
     /**
+     * Change Video Stream Quality of participant
+     */
+    simulcast(participantId) {
+        return RNVoxeetConferencekit.simulcast(participantId);
+    }
+    /**
      * Stops the local video
      */
     stopVideo() {

@@ -56,6 +56,8 @@ import com.voxeet.sdk.services.TelemetryService;
 import com.voxeet.sdk.services.builders.ConferenceCreateOptions;
 import com.voxeet.sdk.services.builders.ConferenceJoinOptions;
 import com.voxeet.sdk.services.conference.information.ConferenceInformation;
+import com.voxeet.sdk.services.simulcast.ParticipantQuality;
+import com.voxeet.sdk.services.simulcast.Quality;
 import com.voxeet.sdk.services.telemetry.SdkEnvironment;
 import com.voxeet.sdk.utils.Opt;
 import com.voxeet.sdk.utils.Validate;
@@ -673,6 +675,21 @@ public class RNVoxeetConferencekitModule extends ReactContextBaseJavaModule {
     public void stopRecording(final Promise promise) {
         RecordingService recordingService = VoxeetSDK.recording();
         recordingService.stop()
+                .then(promise::resolve)
+                .error(promise::reject);
+    }
+
+    @ReactMethod
+    public void simulcast(String participantId, final Promise promise) {
+
+        ParticipantQuality participantQuality = new ParticipantQuality(participantId, Quality.HD);
+
+        List<ParticipantQuality> participantQualityList = new ArrayList<ParticipantQuality>();
+
+        participantQualityList.add(participantQuality);
+
+        VoxeetSDK.conference()
+                .simulcast(participantQualityList)
                 .then(promise::resolve)
                 .error(promise::reject);
     }

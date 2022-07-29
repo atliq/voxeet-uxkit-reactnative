@@ -78,6 +78,10 @@ declare class RNVoxeetSDK {
      */
     stopRecording(): Promise<boolean>;
     /**
+     * Change Video Stream Quality of participant
+     */
+    simulcast(participantId: string): Promise<void>;
+    /**
      * Stops the local video
      */
     stopVideo(): Promise<boolean>;

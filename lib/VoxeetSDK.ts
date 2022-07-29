@@ -144,6 +144,13 @@ class RNVoxeetSDK {
   }
 
   /**
+   * Change Video Stream Quality of participant
+   */
+  simulcast(participantId: string): Promise<void> {
+    return RNVoxeetConferencekit.simulcast(participantId);
+  }
+
+  /**
    * Stops the local video
    */
   stopVideo(): Promise<boolean> {

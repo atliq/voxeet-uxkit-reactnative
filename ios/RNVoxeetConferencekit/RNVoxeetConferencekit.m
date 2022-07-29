@@ -407,6 +407,25 @@ RCT_EXPORT_METHOD(startRecording:(RCTPromiseResolveBlock)resolve
     });
 }
 
+RCT_EXPORT_METHOD(simulcast:(NSString *)participantId
+                  resolve:(RCTPromiseResolveBlock)resolve
+                  ejecter:(RCTPromiseRejectBlock)reject)
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        VTParticipantQuality *requestedQlty = [[VTParticipantQuality alloc] initWithId:participantId quality:VTQualityHd];
+        
+        NSArray *requested = [NSArray arrayWithObject:requestedQlty];
+        
+        [VoxeetSDK.shared.conference simulcastWithRequested:requested completion:^(NSError *error) {
+            if (error != nil) {
+                reject(@"simulcast_error", [error localizedDescription], nil);
+            } else {
+                resolve(nil);
+            }
+        }];
+    });
+}
+
 RCT_EXPORT_METHOD(streams:(NSString *)participantID
                   resolve:(RCTPromiseResolveBlock)resolve
                   ejecter:(RCTPromiseRejectBlock)reject)
