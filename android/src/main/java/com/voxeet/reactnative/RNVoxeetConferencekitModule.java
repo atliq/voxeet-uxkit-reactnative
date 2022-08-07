@@ -360,7 +360,7 @@ public class RNVoxeetConferencekitModule extends ReactContextBaseJavaModule {
                         paramsHolder.putValue("liveRecording", true);
 
                     if (valid(params, "dolbyVoice"))
-                        paramsHolder.setDolbyVoice(false);
+                        paramsHolder.setDolbyVoice(params.getBoolean("dolbyVoice"));
 
                     if (valid(params, "simulcast"))
                         paramsHolder.setSimulcast(params.getBoolean("simulcast"));
