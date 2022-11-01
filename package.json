@@ -49,6 +49,6 @@
     "SDK_LICENSE"
   ],
   "peerDependencies": {
-    "react-native": "^0.55.4"
+    "react-native": ">= 0.60.4"
   }
 }
