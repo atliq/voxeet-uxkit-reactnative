@@ -3,35 +3,35 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CCD4B4CC219F0A7300713806 /* RNVoxeetConferencekit.m in Sources */ = {isa = PBXBuildFile; fileRef = CCD4B4CB219F0A7300713806 /* RNVoxeetConferencekit.m */; };
-		CCD4B4CD219F0A7300713806 /* RNVoxeetConferencekit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CCD4B4CA219F0A7300713806 /* RNVoxeetConferencekit.h */; };
+		EA008602299C09E90092E20E /* RNVoxeetConferencekit.m in Sources */ = {isa = PBXBuildFile; fileRef = EA008601299C09E90092E20E /* RNVoxeetConferencekit.m */; };
+		EA008603299C09E90092E20E /* RNVoxeetConferencekit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = EA008600299C09E90092E20E /* RNVoxeetConferencekit.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		CCD4B4C5219F0A7300713806 /* CopyFiles */ = {
+		EA0085FB299C09E90092E20E /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				CCD4B4CD219F0A7300713806 /* RNVoxeetConferencekit.h in CopyFiles */,
+				EA008603299C09E90092E20E /* RNVoxeetConferencekit.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		CCD4B4C7219F0A7300713806 /* libRNVoxeetConferencekit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNVoxeetConferencekit.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		CCD4B4CA219F0A7300713806 /* RNVoxeetConferencekit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNVoxeetConferencekit.h; sourceTree = "<group>"; };
-		CCD4B4CB219F0A7300713806 /* RNVoxeetConferencekit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNVoxeetConferencekit.m; sourceTree = "<group>"; };
+		EA0085FD299C09E90092E20E /* libRNVoxeetConferencekit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNVoxeetConferencekit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA008600299C09E90092E20E /* RNVoxeetConferencekit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNVoxeetConferencekit.h; sourceTree = "<group>"; };
+		EA008601299C09E90092E20E /* RNVoxeetConferencekit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNVoxeetConferencekit.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		CCD4B4C4219F0A7300713806 /* Frameworks */ = {
+		EA0085FA299C09E90092E20E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,27 +41,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CCD4B4BE219F0A7300713806 = {
+		EA0085F4299C09E90092E20E = {
 			isa = PBXGroup;
 			children = (
-				CCD4B4C9219F0A7300713806 /* RNVoxeetConferencekit */,
-				CCD4B4C8219F0A7300713806 /* Products */,
+				EA0085FF299C09E90092E20E /* RNVoxeetConferencekit */,
+				EA0085FE299C09E90092E20E /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		CCD4B4C8219F0A7300713806 /* Products */ = {
+		EA0085FE299C09E90092E20E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CCD4B4C7219F0A7300713806 /* libRNVoxeetConferencekit.a */,
+				EA0085FD299C09E90092E20E /* libRNVoxeetConferencekit.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CCD4B4C9219F0A7300713806 /* RNVoxeetConferencekit */ = {
+		EA0085FF299C09E90092E20E /* RNVoxeetConferencekit */ = {
 			isa = PBXGroup;
 			children = (
-				CCD4B4CA219F0A7300713806 /* RNVoxeetConferencekit.h */,
-				CCD4B4CB219F0A7300713806 /* RNVoxeetConferencekit.m */,
+				EA008600299C09E90092E20E /* RNVoxeetConferencekit.h */,
+				EA008601299C09E90092E20E /* RNVoxeetConferencekit.m */,
 			);
 			path = RNVoxeetConferencekit;
 			sourceTree = "<group>";
@@ -69,13 +69,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CCD4B4C6219F0A7300713806 /* RNVoxeetConferencekit */ = {
+		EA0085FC299C09E90092E20E /* RNVoxeetConferencekit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CCD4B4D0219F0A7300713806 /* Build configuration list for PBXNativeTarget "RNVoxeetConferencekit" */;
+			buildConfigurationList = EA008606299C09E90092E20E /* Build configuration list for PBXNativeTarget "RNVoxeetConferencekit" */;
 			buildPhases = (
-				CCD4B4C3219F0A7300713806 /* Sources */,
-				CCD4B4C4219F0A7300713806 /* Frameworks */,
-				CCD4B4C5219F0A7300713806 /* CopyFiles */,
+				EA0085F9299C09E90092E20E /* Sources */,
+				EA0085FA299C09E90092E20E /* Frameworks */,
+				EA0085FB299C09E90092E20E /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -83,60 +83,60 @@
 			);
 			name = RNVoxeetConferencekit;
 			productName = RNVoxeetConferencekit;
-			productReference = CCD4B4C7219F0A7300713806 /* libRNVoxeetConferencekit.a */;
+			productReference = EA0085FD299C09E90092E20E /* libRNVoxeetConferencekit.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		CCD4B4BF219F0A7300713806 /* Project object */ = {
+		EA0085F5299C09E90092E20E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1010;
-				ORGANIZATIONNAME = Voxeet;
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1420;
 				TargetAttributes = {
-					CCD4B4C6219F0A7300713806 = {
-						CreatedOnToolsVersion = 10.1;
+					EA0085FC299C09E90092E20E = {
+						CreatedOnToolsVersion = 14.2;
 					};
 				};
 			};
-			buildConfigurationList = CCD4B4C2219F0A7300713806 /* Build configuration list for PBXProject "RNVoxeetConferencekit" */;
-			compatibilityVersion = "Xcode 9.3";
+			buildConfigurationList = EA0085F8299C09E90092E20E /* Build configuration list for PBXProject "RNVoxeetConferencekit" */;
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
-			mainGroup = CCD4B4BE219F0A7300713806;
-			productRefGroup = CCD4B4C8219F0A7300713806 /* Products */;
+			mainGroup = EA0085F4299C09E90092E20E;
+			productRefGroup = EA0085FE299C09E90092E20E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CCD4B4C6219F0A7300713806 /* RNVoxeetConferencekit */,
+				EA0085FC299C09E90092E20E /* RNVoxeetConferencekit */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		CCD4B4C3219F0A7300713806 /* Sources */ = {
+		EA0085F9299C09E90092E20E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CCD4B4CC219F0A7300713806 /* RNVoxeetConferencekit.m in Sources */,
+				EA008602299C09E90092E20E /* RNVoxeetConferencekit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		CCD4B4CE219F0A7300713806 /* Debug */ = {
+		EA008604299C09E90092E20E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -155,13 +155,13 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -180,23 +180,21 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
-		CCD4B4CF219F0A7300713806 /* Release */ = {
+		EA008605299C09E90092E20E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -215,13 +213,13 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -234,26 +232,19 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		CCD4B4D1219F0A7300713806 /* Debug */ = {
+		EA008607299C09E90092E20E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B55NRA8BRW;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				DEVELOPMENT_TEAM = F2C4XJCVDF;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -261,16 +252,11 @@
 			};
 			name = Debug;
 		};
-		CCD4B4D2219F0A7300713806 /* Release */ = {
+		EA008608299C09E90092E20E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B55NRA8BRW;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				DEVELOPMENT_TEAM = F2C4XJCVDF;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -281,25 +267,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CCD4B4C2219F0A7300713806 /* Build configuration list for PBXProject "RNVoxeetConferencekit" */ = {
+		EA0085F8299C09E90092E20E /* Build configuration list for PBXProject "RNVoxeetConferencekit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CCD4B4CE219F0A7300713806 /* Debug */,
-				CCD4B4CF219F0A7300713806 /* Release */,
+				EA008604299C09E90092E20E /* Debug */,
+				EA008605299C09E90092E20E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CCD4B4D0219F0A7300713806 /* Build configuration list for PBXNativeTarget "RNVoxeetConferencekit" */ = {
+		EA008606299C09E90092E20E /* Build configuration list for PBXNativeTarget "RNVoxeetConferencekit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CCD4B4D1219F0A7300713806 /* Debug */,
-				CCD4B4D2219F0A7300713806 /* Release */,
+				EA008607299C09E90092E20E /* Debug */,
+				EA008608299C09E90092E20E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = CCD4B4BF219F0A7300713806 /* Project object */;
+	rootObject = EA0085F5299C09E90092E20E /* Project object */;
 }

@@ -362,7 +362,7 @@ RCT_EXPORT_METHOD(fetch:(NSString *)conferenceID
         [VoxeetSDK.shared.conference fetchWithConferenceID:conferenceID completion:^(VTConference *conference) {
             if(!conference) {
                 resolve(nil);
-                return;                
+                return;
             }
             resolve([self convertFromConference:conference]);
         }];
