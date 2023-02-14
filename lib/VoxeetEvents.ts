@@ -76,10 +76,16 @@ export default class VoxeetEvents {
     this.events.addListener(type, listener);
   }
 
-  public removeListener<K extends keyof EventMap>(
+  // public removeListener<K extends keyof EventMap>(
+  //   type: K,
+  //   listener: (event: EventMap[K]) => void
+  // ): void {
+  //   this.events.removeAllListeners(type, listener);
+  // }
+
+  public removeAllListeners<K extends keyof EventMap>(
     type: K,
-    listener: (event: EventMap[K]) => void
   ): void {
-    this.events.removeListener(type, listener);
+    this.events.removeAllListeners(type);
   }
 }

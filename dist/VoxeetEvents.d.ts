@@ -36,6 +36,6 @@ export default class VoxeetEvents {
     private events;
     constructor();
     addListener<K extends keyof EventMap>(type: K, listener: (event: EventMap[K]) => void): void;
-    removeListener<K extends keyof EventMap>(type: K, listener: (event: EventMap[K]) => void): void;
+    removeAllListeners<K extends keyof EventMap>(type: K): void;
 }
 export {};

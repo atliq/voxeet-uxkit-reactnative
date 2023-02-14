@@ -7,8 +7,14 @@ export default class VoxeetEvents {
     addListener(type, listener) {
         this.events.addListener(type, listener);
     }
-    removeListener(type, listener) {
-        this.events.removeListener(type, listener);
+    // public removeListener<K extends keyof EventMap>(
+    //   type: K,
+    //   listener: (event: EventMap[K]) => void
+    // ): void {
+    //   this.events.removeAllListeners(type, listener);
+    // }
+    removeAllListeners(type) {
+        this.events.removeAllListeners(type);
     }
 }
 //# sourceMappingURL=VoxeetEvents.js.map
